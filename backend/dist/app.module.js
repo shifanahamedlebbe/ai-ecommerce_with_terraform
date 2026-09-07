@@ -6,8 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { PrismaModule } from './prisma/prisma.module.js';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { ProductsModule } from './products/products.module.js';
+import { AuthModule } from './auth/auth.module.js';
 import path from 'path';
 let AppModule = class AppModule {
 };
@@ -18,6 +21,9 @@ AppModule = __decorate([
                 envFilePath: path.resolve(import.meta.dirname, '../../.env'),
                 isGlobal: true,
             }),
+            PrismaModule,
+            AuthModule,
+            ProductsModule,
         ],
         controllers: [AppController],
         providers: [AppService],

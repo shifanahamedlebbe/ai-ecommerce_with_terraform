@@ -38,6 +38,9 @@ model Product {
   rating          Decimal   @db.Decimal(2, 1)
   inStock         Boolean   @default(true)
   features        String[]
+  // Deal / discount - product is on deal when salePrice is set and active , added new colums
+  salePrice       Decimal?  @db.Decimal(10, 2)
+  dealExpiresAt   DateTime?
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 
