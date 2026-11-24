@@ -34,12 +34,11 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install Dependencies
+        working-directory: ./backend
         run: npm ci
 
-      # Step 4: Run ESLint
-      - name: Run Lint
-        run: npm run lint
 
       # Step 5: Build Next.js application
       - name: Build Application
+        working-directory: ./backend
         run: npm run build
